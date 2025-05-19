@@ -66,9 +66,10 @@ const searchHandler = async () => {
     if (data.results) {
         const results = data.results[0];
         // TODO: value に都道府県コード設定: prefcode
-        document.getElementById('prefecture').value;
+        document.getElementById('prefecture').value = results.prefcode;
         // TODO: テキストに住所設定: address2, address3
-        document.getElementById('city').value;
+        document.getElementById('city').value 
+            = results.address2 + results.address3;
     } else {
         errorDisplay.innerHTML = data.message;
     }
