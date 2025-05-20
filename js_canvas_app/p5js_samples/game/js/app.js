@@ -48,7 +48,7 @@ function draw() {
     handleCameraRotation();
 
     // TODO: カメラの距離
-    let cameraDistance = 800;
+    let cameraDistance = 400;
     // カメラの位置を計算
     let camX = player.pos.x - sin(radians(camAngle)) * cameraDistance;
     let camZ = player.pos.z - cos(radians(camAngle)) * cameraDistance;
@@ -83,10 +83,10 @@ function draw() {
 function handleCameraRotation() {
     if (keyIsDown(LEFT_ARROW)) {
         // TODO: 左回転
-        // camAngle += 3;
+        camAngle += 3;
     }
     if (keyIsDown(RIGHT_ARROW)) {
         // TODO: 右回転
-        // camAngle -= 3;
+        camAngle -= 3;
     }
 }

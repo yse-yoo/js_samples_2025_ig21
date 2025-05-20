@@ -31,11 +31,11 @@ class Player {
         );
         if (keyIsDown(UP_ARROW)) {
             // TODO: 前に進む
-            // this.velocity.add(p5.Vector.mult(direction, this.speed));
+            this.velocity.add(p5.Vector.mult(direction, this.speed));
         }
         if (keyIsDown(DOWN_ARROW)) {
             // TODO: 後ろに進む
-            // this.velocity.add(p5.Vector.mult(direction, -this.speed));
+            this.velocity.add(p5.Vector.mult(direction, -this.speed));
         }
     }
 
@@ -48,7 +48,7 @@ class Player {
             this.grounded = true;
             if (keyIsDown(32)) { // Spaceでジャンプ
                 // TODO: ジャンプの実装: 
-                // this.velocity.y = -jumpSpeed;
+                this.velocity.y = -jumpSpeed;
                 this.grounded = false;
             }
         } else {
