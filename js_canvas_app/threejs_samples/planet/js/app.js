@@ -69,6 +69,7 @@ let zoomStart = new THREE.Vector3();
 let zoomEnd = new THREE.Vector3();
 let zoomLookAt = new THREE.Vector3();
 let zoomProgress = 0;
+let trackedPlanet = null;
 
 planets.forEach(planet => {
     const li = document.createElement('li');
@@ -79,6 +80,7 @@ planets.forEach(planet => {
         zoomEnd.copy(zoomLookAt).add(new THREE.Vector3(0, 10, 20));
         zoomProgress = 0;
         isZooming = true;
+        trackedPlanet = planet;
     });
     planetListEl.appendChild(li);
 });
@@ -90,6 +92,7 @@ document.getElementById('resetButton').addEventListener('click', () => {
     zoomLookAt.copy(defaultLookAt);
     zoomProgress = 0;
     isZooming = true;
+    trackedPlanet = null;
 });
 
 // --- アニメーション ---
@@ -112,6 +115,11 @@ function animate() {
         }
         camera.position.lerpVectors(zoomStart, zoomEnd, zoomProgress);
         camera.lookAt(zoomLookAt);
+    } else if (trackedPlanet) {
+        // ズーム完了後に惑星を追跡
+        const offset = new THREE.Vector3(0, 10, 20);
+        camera.position.copy(trackedPlanet.mesh.position).add(offset);
+        camera.lookAt(trackedPlanet.mesh.position);
     }
 
     renderer.render(scene, camera);
