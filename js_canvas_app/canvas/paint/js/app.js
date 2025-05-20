@@ -119,7 +119,7 @@ lineWidthRange.addEventListener('input', (e) => {
 resetButton.addEventListener('click', () => {
     if (confirm('Are you sure you want to clear the canvas?')) {
         // TODO: キャンバス全体をクリア: clearRect()
-        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 });
 
