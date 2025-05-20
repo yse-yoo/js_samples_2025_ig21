@@ -4,6 +4,8 @@ const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 console.log(ctx)
 
+// ブラウザのキャッシュのショートカット
+// Ctrl + Shift + R
 /**
  * drawSquare()
  */
@@ -12,11 +14,12 @@ function drawSquare() {
     ctx.strokeStyle = 'black';
 
     // TODO: 矩形を塗り  
-    // x, y, width, height:例 200, 0, 50, 50
+    // x, y, width, height:例 0, 0, 100, 50
     ctx.fillRect(0, 0, 100, 50);
 
     // TODO: 矩形をストローク 
-    // x, y, width, height:例 200, 0, 100, 100
+    // x, y, width, height:例 0, 0, 100, 50
+    ctx.strokeRect(0, 0, 100, 50);
 }
 
 
