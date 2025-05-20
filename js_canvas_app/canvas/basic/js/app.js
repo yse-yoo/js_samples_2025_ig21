@@ -54,6 +54,7 @@ function drawCircle() {
     ctx.beginPath();
     // TODO: 円を描画
     // arc(x, y, radius, startAngle, endAngle)
+    ctx.arc(300, 50, 50, 0, Math.PI * 2, false);
 
     ctx.closePath();
     ctx.fill();
@@ -74,6 +75,7 @@ function drawTextOnCanvas(text, x, y, font, color) {
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     // TODO: 文字を描画
+    ctx.fillText(text, x, y);
 }
 
 // 描画
