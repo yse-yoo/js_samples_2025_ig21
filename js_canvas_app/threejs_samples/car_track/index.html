@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D カーレース</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="absolute top-0 left-0 bg-alpha p-4 rounded shadow z-10">
+        <h1 class="text-lg font-bold mb-2">2D カーレース</h1>
+        <p id="speed-display" class="text-sm text-gray-700"></p>
+    </div>
+
+    <canvas id="race-canvas" class="block w-full h-screen"></canvas>
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <!-- アプリ本体 -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

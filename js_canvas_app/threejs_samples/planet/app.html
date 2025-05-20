@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>太陽系アニメーション - Planet List Zoom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="relative m-0 overflow-hidden">
+
+    <!-- ズームリセットボタン -->
+    <button id="resetButton"
+        class="absolute top-5 left-5 px-5 py-2 border border-gray-500 bg-black/70 text-white cursor-pointer z-10 rounded-md">
+        Reset Zoom
+    </button>
+
+    <!-- 惑星リスト -->
+    <div id="planetList" class="absolute top-20 left-5 bg-black/70 text-white p-4 rounded-md z-10 font-sans">
+        <ul class="list-none m-0 p-0 space-y-1 cursor-pointer"></ul>
+    </div>
+
+    <!-- three.js ライブラリ -->
+    <script src="https://unpkg.com/three@0.152.0/build/three.min.js"></script>
+    <!-- planetData を定義した外部ファイル -->
+    <script src="js/planetData.js"></script>
+    <!-- メインの three.js のコード -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
