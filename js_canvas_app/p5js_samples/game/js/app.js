@@ -2,7 +2,7 @@ let camAngle = 0;    // カメラアングル（ラジアンで管理）
 let player;          // プレイヤーオブジェクト
 let obstacles = [];  // 障害物を格納する配列
 // TODO: 障害物の数
-const numObstacles = 20;
+const numObstacles = 50;
 // TODO: プレイヤーのサイズ
 const playerSize = 20;
 
