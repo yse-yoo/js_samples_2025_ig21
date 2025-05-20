@@ -7,6 +7,7 @@ const downloadButton = document.getElementById('downloadButton');
 
 // canvas 要素と描画コンテキストの取得
 const canvas = document.getElementById('drawCanvas');
+// 2Dコンテキストを取得
 const ctx = canvas.getContext('2d');
 
 // 描画状態を管理する変数
@@ -36,9 +37,9 @@ function startDrawing(x, y) {
 function draw(x, y) {
     if (!isDrawing) return;
     // TODO: 前回の位置から現在の位置まで線を描画
-    // ctx.beginPath();
-    // ctx.moveTo(lastX, lastY);
-    // ctx.lineTo(x, y);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(x, y);
 
     // 現在の色と線の太さを適用
     ctx.strokeStyle = currentColor;
@@ -59,8 +60,9 @@ function endDrawing() {
 
 // イベント
 // TODO: マウスダウン: mousedown
-canvas.addEventListener('', (e) => {
+canvas.addEventListener('mousedown', (e) => {
     const rect = canvas.getBoundingClientRect();
+    console.log('mousedown', e.clientX, e.clientY);
     startDrawing(e.clientX - rect.left, e.clientY - rect.top);
 });
 
@@ -76,7 +78,7 @@ canvas.addEventListener('touchstart', (e) => {
 // Mac: Cmd + Shift + R
 // マウス移動
 // TODO: マウス移動: mousemove
-canvas.addEventListener('', (e) => {
+canvas.addEventListener('mousemove', (e) => {
     // TODO: getBoundingClientRect() 座標取得
     const rect = canvas.getBoundingClientRect();
     // マウスイベント e でマウスの座標を取得
