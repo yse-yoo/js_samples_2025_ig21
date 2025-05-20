@@ -1,6 +1,7 @@
 // Canvas 要素を取得し、2D コンテキストを取得
 const canvas = document.getElementById('myCanvas');
 // TODO: 2D コンテキスト
+const ctx = canvas.getContext('2d');
 console.log(ctx)
 
 /**
